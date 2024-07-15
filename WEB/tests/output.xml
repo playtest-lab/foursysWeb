@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.9 on win32)" generated="2024-07-15T09:15:19.477251" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="C:\Users\juliano.rocha\Documents\Four\WEB\tests\login_test.robot">
+<test id="s1-t1" name="Login Sistema" line="16">
+<kw name="Dado que eu esteja no sistema do exercicio de automação" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:25.356594" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-15T09:15:25.355587" elapsed="9.236551"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-15T09:15:34.593142" elapsed="0.117750"/>
+</kw>
+<status status="PASS" start="2024-07-15T09:15:25.350116" elapsed="9.361812"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:34.724149" level="INFO">${random_first_name} = Emma</msg>
+<var>${random_first_name}</var>
+<arg>random.choice($first_names)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:34.715068" elapsed="0.009081"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:34.726248" level="INFO">${random_second_name} = Erick</msg>
+<var>${random_second_name}</var>
+<arg>random.choice($second_names)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:34.725235" elapsed="0.001013"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:34.729748" level="INFO">${random_name} = Emma Erick</msg>
+<var>${random_name}</var>
+<arg>"${random_first_name} ${random_second_name}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:34.727250" elapsed="0.002498"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:34.736997" level="INFO">${random_number} = 86</msg>
+<var>${random_number}</var>
+<arg>random.randint(1, 100)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:34.735721" elapsed="0.001276"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:34.739359" level="INFO">${random_domain} = hotmail.com</msg>
+<var>${random_domain}</var>
+<arg>random.choice($email_domains)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:34.738011" elapsed="0.002578"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:34.741606" level="INFO">${random_email} = Emma.86@hotmail.com</msg>
+<var>${random_email}</var>
+<arg>"${random_first_name}.${random_number}@${random_domain}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:34.740589" elapsed="0.001017"/>
+</kw>
+<kw name="E informo o campo" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:34.747798" level="INFO">Typing text 'Emma Erick' into text field '//*[@data-qa="signup-name"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:34.746812" elapsed="0.487343"/>
+</kw>
+<arg>signup-name</arg>
+<arg>${random_name}</arg>
+<status status="PASS" start="2024-07-15T09:15:34.745786" elapsed="0.488369"/>
+</kw>
+<kw name="E informo o campo" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:35.239696" level="INFO">Typing text 'Emma.86@hotmail.com' into text field '//*[@data-qa="signup-email"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:35.239696" elapsed="0.957586"/>
+</kw>
+<arg>signup-email</arg>
+<arg>${random_email}</arg>
+<status status="PASS" start="2024-07-15T09:15:35.238602" elapsed="0.958680"/>
+</kw>
+<kw name="Quando clico na opção" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:36.199826" level="INFO">Clicking element '//*[@data-qa="signup-button"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:36.199826" elapsed="1.891077"/>
+</kw>
+<arg>signup-button</arg>
+<status status="PASS" start="2024-07-15T09:15:36.198809" elapsed="1.893096"/>
+</kw>
+<kw name="Então o usuário direcionado para a tela de criação de conta" owner="keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:38.109063" level="INFO">${current_url} = https://automationexercise.com/signup</msg>
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-07-15T09:15:38.092903" elapsed="0.016160"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>https://automationexercise.com/signup</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-07-15T09:15:38.109063" elapsed="0.001012"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//*[@data-qa="days"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-07-15T09:15:38.110075" elapsed="0.017570"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:38.140117" level="INFO">Current page contains element '//*[@data-qa="days"]'.</msg>
+<arg>//*[@data-qa="days"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-07-15T09:15:38.128641" elapsed="0.011476"/>
+</kw>
+<status status="PASS" start="2024-07-15T09:15:38.091905" elapsed="0.048212"/>
+</kw>
+<doc>Iniciar cadastro com sucesso</doc>
+<status status="PASS" start="2024-07-15T09:15:25.347142" elapsed="12.793984"/>
+</test>
+<test id="s1-t2" name="Cadastro de novo usuário" line="33">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:38.143939" level="INFO">${random_first_name} = Emily</msg>
+<var>${random_first_name}</var>
+<arg>random.choice($first_names)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:38.143433" elapsed="0.000506"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:38.144947" level="INFO">${random_second_name} = Neves</msg>
+<var>${random_second_name}</var>
+<arg>random.choice($second_names)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:38.143939" elapsed="0.001008"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:38.145947" level="INFO">${random_company} = GestUs</msg>
+<var>${random_company}</var>
+<arg>random.choice($company)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:38.144947" elapsed="0.001000"/>
+</kw>
+<kw name="Generate Sp Address And Phone" owner="CustomLibrary">
+<msg time="2024-07-15T09:15:38.610155" level="INFO">${data} = {'street': 'Lagoa de da Rocha', 'neighborhood': 'Estrela Do Oriente', 'city': 'São Paulo', 'state': 'SP', 'zipcode': '91073-344', 'phone_number': '+55 (071) 4057-1785'}</msg>
+<var>${data}</var>
+<status status="PASS" start="2024-07-15T09:15:38.145947" elapsed="0.464208"/>
+</kw>
+<kw name="Generate Password" owner="CustomLibrary">
+<msg time="2024-07-15T09:15:39.104697" level="INFO">${password} = mX9tGtWYuOBP</msg>
+<var>${password}</var>
+<arg>${PASSWORD_LENGTH}</arg>
+<status status="PASS" start="2024-07-15T09:15:38.612168" elapsed="0.493529"/>
+</kw>
+<kw name="Quando informar data de nascimento" owner="keywords">
+<kw name="Selecionar Opção Aleatória em Select" owner="keywords">
+<kw name="Get List Items" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:39.695949" level="INFO">${options} = ['Day', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']</msg>
+<var>${options}</var>
+<arg>${locator}</arg>
+<doc>Returns all labels or values of selection list ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:39.108215" elapsed="0.587734"/>
+</kw>
+<return>
+<value>${options}</value>
+<status status="PASS" start="2024-07-15T09:15:39.696948" elapsed="0.000000"/>
+</return>
+<msg time="2024-07-15T09:15:39.696948" level="INFO">${day_option} = ['Day', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']</msg>
+<var>${day_option}</var>
+<arg>//*[@data-qa="days"]</arg>
+<status status="PASS" start="2024-07-15T09:15:39.107704" elapsed="0.589244"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:39.697947" level="INFO">${random_day_option} = 29</msg>
+<var>${random_day_option}</var>
+<arg>random.choice(${day_option}[1:])</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:39.696948" elapsed="0.000999"/>
+</kw>
+<kw name="Selecionar Opção Aleatória em Select" owner="keywords">
+<kw name="Get List Items" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:39.943389" level="INFO">${options} = ['Month', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']</msg>
+<var>${options}</var>
+<arg>${locator}</arg>
+<doc>Returns all labels or values of selection list ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:39.699952" elapsed="0.243437"/>
+</kw>
+<return>
+<value>${options}</value>
+<status status="PASS" start="2024-07-15T09:15:39.943389" elapsed="0.000000"/>
+</return>
+<msg time="2024-07-15T09:15:39.943389" level="INFO">${month_option} = ['Month', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']</msg>
+<var>${month_option}</var>
+<arg>//*[@data-qa="months"]</arg>
+<status status="PASS" start="2024-07-15T09:15:39.698953" elapsed="0.244436"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:39.944401" level="INFO">${random_month_option} = November</msg>
+<var>${random_month_option}</var>
+<arg>random.choice(${month_option}[1:])</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:39.943389" elapsed="0.001012"/>
+</kw>
+<kw name="Selecionar Opção Aleatória em Select" owner="keywords">
+<kw name="Get List Items" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:41.995383" level="INFO">${options} = ['Year', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001', '2000', '1999', '1998',...</msg>
+<var>${options}</var>
+<arg>${locator}</arg>
+<doc>Returns all labels or values of selection list ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:39.945399" elapsed="2.049984"/>
+</kw>
+<return>
+<value>${options}</value>
+<status status="PASS" start="2024-07-15T09:15:41.996398" elapsed="0.000000"/>
+</return>
+<msg time="2024-07-15T09:15:41.996398" level="INFO">${years_option} = ['Year', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001', '2000', '1999', '1998',...</msg>
+<var>${years_option}</var>
+<arg>//*[@data-qa="years"]</arg>
+<status status="PASS" start="2024-07-15T09:15:39.944401" elapsed="2.051997"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:41.998397" level="INFO">${random_years_option} = 1909</msg>
+<var>${random_years_option}</var>
+<arg>random.choice(${years_option}[1:])</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:41.997396" elapsed="0.001001"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:41.999400" level="INFO">Selecting options from selection list '//*[@data-qa="days"]' by label 29.</msg>
+<arg>//*[@data-qa="days"]</arg>
+<arg>${random_day_option}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-07-15T09:15:41.999400" elapsed="0.212737"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:42.213553" level="INFO">Selecting options from selection list '//*[@data-qa="months"]' by label November.</msg>
+<arg>//*[@data-qa="months"]</arg>
+<arg>${random_month_option}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-07-15T09:15:42.212137" elapsed="0.198338"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:42.411616" level="INFO">Selecting options from selection list '//*[@data-qa="years"]' by label 1909.</msg>
+<arg>//*[@data-qa="years"]</arg>
+<arg>${random_years_option}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-07-15T09:15:42.410475" elapsed="0.158205"/>
+</kw>
+<status status="PASS" start="2024-07-15T09:15:39.106697" elapsed="3.461983"/>
+</kw>
+<kw name="E informo o campo" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:42.570823" level="INFO">Typing text 'mX9tGtWYuOBP' into text field '//*[@data-qa="password"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:42.570823" elapsed="0.353961"/>
+</kw>
+<arg>password</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2024-07-15T09:15:42.569808" elapsed="0.354976"/>
+</kw>
+<kw name="E selecionar o checkbox" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:42.927003" level="INFO">Clicking element '//*[@name="newsletter"]'.</msg>
+<arg>//*[@name="${locator}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:42.926447" elapsed="0.173336"/>
+</kw>
+<arg>newsletter</arg>
+<status status="PASS" start="2024-07-15T09:15:42.925796" elapsed="0.174267"/>
+</kw>
+<kw name="E selecionar o checkbox" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:43.103310" level="INFO">Clicking element '//*[@name="optin"]'.</msg>
+<arg>//*[@name="${locator}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:43.102078" elapsed="0.126550"/>
+</kw>
+<arg>optin</arg>
+<status status="PASS" start="2024-07-15T09:15:43.101354" elapsed="0.128271"/>
+</kw>
+<kw name="E informo o campo" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:43.232027" level="INFO">Typing text 'Emily' into text field '//*[@data-qa="first_name"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:43.231012" elapsed="0.262051"/>
+</kw>
+<arg>first_name</arg>
+<arg>${random_first_name}</arg>
+<status status="PASS" start="2024-07-15T09:15:43.229625" elapsed="0.264450"/>
+</kw>
+<kw name="E informo o campo" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:43.497143" level="INFO">Typing text 'Neves' into text field '//*[@data-qa="last_name"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:43.497143" elapsed="0.254679"/>
+</kw>
+<arg>last_name</arg>
+<arg>${random_second_name}</arg>
+<status status="PASS" start="2024-07-15T09:15:43.496073" elapsed="0.255749"/>
+</kw>
+<kw name="E informo o campo" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:43.755865" level="INFO">Typing text 'GestUs' into text field '//*[@data-qa="company"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:43.754381" elapsed="0.270681"/>
+</kw>
+<arg>company</arg>
+<arg>${random_company}</arg>
+<status status="PASS" start="2024-07-15T09:15:43.753098" elapsed="0.271964"/>
+</kw>
+<kw name="E selecionar o pais" owner="keywords">
+<kw name="Selecionar Opção Aleatória em Select" owner="keywords">
+<kw name="Get List Items" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:44.275466" level="INFO">${options} = ['India', 'United States', 'Canada', 'Australia', 'Israel', 'New Zealand', 'Singapore']</msg>
+<var>${options}</var>
+<arg>${locator}</arg>
+<doc>Returns all labels or values of selection list ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:44.028422" elapsed="0.247044"/>
+</kw>
+<return>
+<value>${options}</value>
+<status status="PASS" start="2024-07-15T09:15:44.275466" elapsed="0.000000"/>
+</return>
+<msg time="2024-07-15T09:15:44.275466" level="INFO">${country_option} = ['India', 'United States', 'Canada', 'Australia', 'Israel', 'New Zealand', 'Singapore']</msg>
+<var>${country_option}</var>
+<arg>//*[@data-qa="country"]</arg>
+<status status="PASS" start="2024-07-15T09:15:44.027423" elapsed="0.248043"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-15T09:15:44.277487" level="INFO">${random_country_option} = Canada</msg>
+<var>${random_country_option}</var>
+<arg>random.choice(${country_option}[1:])</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-15T09:15:44.276483" elapsed="0.001004"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:44.277487" level="INFO">Selecting options from selection list '//*[@data-qa="country"]' by label Canada.</msg>
+<arg>//*[@data-qa="country"]</arg>
+<arg>${random_country_option}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-07-15T09:15:44.277487" elapsed="0.151319"/>
+</kw>
+<status status="PASS" start="2024-07-15T09:15:44.026406" elapsed="0.403422"/>
+</kw>
+<kw name="E informo o campo" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:44.433424" level="INFO">Typing text 'Lagoa de da Rocha' into text field '//*[@data-qa="address"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:44.432406" elapsed="0.443878"/>
+</kw>
+<arg>address</arg>
+<arg>${data['street']}</arg>
+<status status="PASS" start="2024-07-15T09:15:44.429828" elapsed="0.447451"/>
+</kw>
+<kw name="E informo o campo" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:44.881285" level="INFO">Typing text 'SP' into text field '//*[@data-qa="state"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:44.880266" elapsed="0.296621"/>
+</kw>
+<arg>state</arg>
+<arg>${data['state']}</arg>
+<status status="PASS" start="2024-07-15T09:15:44.877279" elapsed="0.300605"/>
+</kw>
+<kw name="E informo o campo" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:45.183436" level="INFO">Typing text 'São Paulo' into text field '//*[@data-qa="city"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:45.182436" elapsed="0.624068"/>
+</kw>
+<arg>city</arg>
+<arg>${data['city']}</arg>
+<status status="PASS" start="2024-07-15T09:15:45.178883" elapsed="0.628141"/>
+</kw>
+<kw name="E informo o campo" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:45.811765" level="INFO">Typing text '91073-344' into text field '//*[@data-qa="zipcode"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:45.811246" elapsed="0.748956"/>
+</kw>
+<arg>zipcode</arg>
+<arg>${data['zipcode']}</arg>
+<status status="PASS" start="2024-07-15T09:15:45.808109" elapsed="0.753206"/>
+</kw>
+<kw name="E informo o campo" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:46.571700" level="INFO">Typing text '+55 (071) 4057-1785' into text field '//*[@data-qa="mobile_number"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:46.570700" elapsed="1.013113"/>
+</kw>
+<arg>mobile_number</arg>
+<arg>${data['phone_number']}</arg>
+<status status="PASS" start="2024-07-15T09:15:46.566869" elapsed="1.016944"/>
+</kw>
+<kw name="Quando clico na opção" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:47.595453" level="INFO">Clicking element '//*[@data-qa="create-account"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T09:15:47.594453" elapsed="2.236581"/>
+</kw>
+<arg>create-account</arg>
+<status status="PASS" start="2024-07-15T09:15:47.590780" elapsed="2.240254"/>
+</kw>
+<kw name="Então o usuário direcionado para a tela de conta criada" owner="keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:51.020742" level="INFO">${current_url} = https://automationexercise.com/account_created</msg>
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-07-15T09:15:49.841531" elapsed="1.179211"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>https://automationexercise.com/account_created</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-07-15T09:15:51.020742" elapsed="0.001481"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//*[@data-qa="account-created"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-07-15T09:15:51.023242" elapsed="0.069628"/>
+</kw>
+<status status="PASS" start="2024-07-15T09:15:49.840539" elapsed="1.252331"/>
+</kw>
+<kw name="E o sistema exibe a mensagem de conclusão do cadastro da conta" owner="keywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:51.172687" level="INFO">Current page contains text 'Account Created!'.</msg>
+<arg>${EXPECTED_TEXT_TITLE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-07-15T09:15:51.103205" elapsed="0.070498"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:51.216312" level="INFO">Current page contains text 'Congratulations! Your new account has been successfully created!'.</msg>
+<arg>${EXPECTED_TEXT_FIRST}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-07-15T09:15:51.173703" elapsed="0.042609"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-07-15T09:15:51.264292" level="INFO">Current page contains text 'You can now take advantage of member privileges to enhance your online shopping experience with us.'.</msg>
+<arg>${EXPECTED_TEXT_SECOND}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-07-15T09:15:51.217315" elapsed="0.047898"/>
+</kw>
+<status status="PASS" start="2024-07-15T09:15:51.102189" elapsed="0.163024"/>
+</kw>
+<doc>Realizar cadastro no sistema com sucesso</doc>
+<status status="PASS" start="2024-07-15T09:15:38.142135" elapsed="13.124075"/>
+</test>
+<status status="PASS" start="2024-07-15T09:15:19.483997" elapsed="31.784216"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Login Test">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-07-15T09:15:21.607739" level="WARN">Error in file 'C:\Users\juliano.rocha\Documents\Four\WEB\resources\keywords.robot' on line 70: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
